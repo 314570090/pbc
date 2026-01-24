@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Logistics & Ordering | PBC Peptide</title>
+    <meta name="description" content="Efficient global logistics and ordering process for peptide products. Secure payment options and worldwide shipping.">
+    <meta name="keywords" content="peptide shipping, global logistics, secure payment, worldwide shipping, order process, payment methods">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="src/favicon.ico">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --primary-color: #2c5aa0;
+            --secondary-color: #1a3d6e;
+            --accent-color: #4a90e2;
+            --success-color: #27ae60;
+            --text-dark: #2c3e50;
+            --text-light: #7f8c8d;
+            --bg-light: #f8f9fa;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Header Styles */
+        .navbar {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 1rem 0;
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color) !important;
+        }
+
+        .nav-link {
+            color: var(--text-dark) !important;
+            font-weight: 500;
+            margin: 0 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color) !important;
+        }
+
+        .btn-whatsapp {
+            background: #25d366;
+            color: white !important;
+            border-radius: 25px;
+            padding: 0.5rem 1.5rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-whatsapp:hover {
+            background: #128c7e;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        /* Content Sections */
+        .section-padding {
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-light);
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+        }
+
+        .order-step {
+            display: flex;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .order-step:last-child {
+            margin-bottom: 0;
+        }
+
+        .step-number {
+            background: var(--primary-color);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            flex-shrink: 0;
+            z-index: 2;
+        }
+
+        .step-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-left: 2rem;
+            flex-grow: 1;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+        }
+
+        .step-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .step-description {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        .payment-method {
+            display: inline-block;
+            background: white;
+            border: 1px solid #ddd;
+            padding: 1rem;
+            border-radius: 10px;
+            text-align: center;
+            margin: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .payment-method:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .payment-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .warehouse-map {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .warehouse-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .warehouse-icon {
+            font-size: 1.5rem;
+            color: var(--success-color);
+            margin-right: 1rem;
+        }
+
+        .shipping-table {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
+
+        .tracking-status {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--secondary-color);
+            color: white;
+            padding: 3rem 0 1.5rem;
+            margin-top: 5rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .navbar-nav {
+                text-align: center;
+            }
+            
+            .section-padding {
+                padding: 2rem 0;
+            }
+            
+            .order-step {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .step-content {
+                margin-left: 0;
+                margin-top: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="src/logo6.png" alt="PBC Peptide Logo" style="height: 60px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="quality.html">Quality</a></li>
+                    <li class="nav-item"><a class="nav-link" href="research.html">Research</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="logistics.html">Logistics</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+                <a href="https://wa.me/85270389513?text=Hi%20PBC%20Peptide,%20I%20would%20like%20to%20request%20a%20quote." class="btn btn-whatsapp ms-3">
+                    <i class="bi bi-whatsapp"></i> Get Quote
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section" style="margin-top: 76px;">
+        <div class="container">
+            <h1 class="hero-title">Global Logistics & Ordering</h1>
+            <p class="hero-subtitle">Secure, efficient shipping worldwide with multiple payment options</p>
+        </div>
+    </section>
+
+    <!-- Order Process Section -->
+    <section class="section-padding">
+        <div class="container">
+            <h2 class="section-title">Ordering Process</h2>
+            <p class="section-subtitle">Simple four-step process to get your peptides delivered safely</p>
+            
+            <div class="process-timeline">
+                <div class="order-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4 class="step-title">Inquiry & Quote</h4>
+                        <p class="step-description">Contact us via WhatsApp with your requirements. We'll provide a detailed quote including product specifications, quantity, and shipping options.</p>
+                        <p class="mb-0"><a href="https://wa.me/85270389513?text=Hi%20PBC%20Peptide,%20I%20would%20like%20to%20request%20a%20quote." class="btn btn-whatsapp">
+                            <i class="bi bi-whatsapp"></i> Start Inquiry
+                        </a></p>
+                    </div>
+                </div>
+                
+                <div class="order-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4 class="step-title">Review COA & Confirm</h4>
+                        <p class="step-description">We'll provide Certificate of Analysis for your review. Once confirmed, proceed with payment to secure your order.</p>
+                    </div>
+                </div>
+                
+                <div class="order-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4 class="step-title">Secure Payment</h4>
+                        <p class="step-description">Choose from our multiple secure payment options. Payment processing is completed before shipment preparation.</p>
+                    </div>
+                </div>
+                
+                <div class="order-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h4 class="step-title">Fast Shipping & Tracking</h4>
+                        <p class="step-description">Your order is shipped via our global network with temperature-controlled handling and real-time tracking.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Global Network Section -->
+    <section class="section-padding" style="background: var(--bg-light);">
+        <div class="container">
+            <h2 class="section-title">Global Distribution Network</h2>
+            <p class="section-subtitle">Strategic warehouses for faster, more reliable delivery</p>
+            
+            <div class="warehouse-map">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="warehouse-item">
+                            <i class="bi bi-geo-alt warehouse-icon"></i>
+                            <div>
+                                <h4>United States Warehouse</h4>
+                                <p>New Jersey, USA</p>
+                                <p>Services North America with 2-5 day delivery</p>
+                            </div>
+                        </div>
+                        
+                        <div class="warehouse-item">
+                            <i class="bi bi-geo-alt warehouse-icon"></i>
+                            <div>
+                                <h4>European Union Hub</h4>
+                                <p>Amsterdam, Netherlands</p>
+                                <p>Serves EU customers with 2-4 day delivery</p>
+                            </div>
+                        </div>
+                        
+                        <div class="warehouse-item">
+                            <i class="bi bi-geo-alt warehouse-icon"></i>
+                            <div>
+                                <h4>Asia-Pacific Center</h4>
+                                <p>Hong Kong SAR</p>
+                                <p>Regional hub for Asia-Pacific markets</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="text-center">
+                            <i class="bi bi-globe2" style="font-size: 10rem; color: var(--primary-color); opacity: 0.2;"></i>
+                            <p class="mt-3">We serve over 35 countries worldwide with our distribution network</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Methods Section -->
+    <section class="section-padding">
+        <div class="container">
+            <h2 class="section-title">Payment Options</h2>
+            <p class="section-subtitle">Multiple secure payment methods to suit your preference</p>
+            
+            <div class="text-center">
+                <div class="payment-method">
+                    <div class="payment-icon">
+                        <i class="bi bi-currency-bitcoin"></i>
+                    </div>
+                    <h5>Bitcoin</h5>
+                    <p>Secure crypto payments</p>
+                </div>
+                
+                <div class="payment-method">
+                    <div class="payment-icon">
+                        <i class="bi bi-currency-exchange"></i>
+                    </div>
+                    <h5>USDT</h5>
+                    <p>Stablecoin transactions</p>
+                </div>
+                
+                <div class="payment-method">
+                    <div class="payment-icon">
+                        <i class="bi bi-bank"></i>
+                    </div>
+                    <h5>Bank Transfer</h5>
+                    <p>Traditional banking</p>
+                </div>
+                
+                <div class="payment-method">
+                    <div class="payment-icon">
+                        <i class="bi bi-cash-coin"></i>
+                    </div>
+                    <h5>Wise</h5>
+                    <p>International transfers</p>
+                </div>
+                
+                <div class="payment-method">
+                    <div class="payment-icon">
+                        <i class="bi bi-wallet2"></i>
+                    </div>
+                    <h5>Alipay</h5>
+                    <p>Convenient digital wallet</p>
+                </div>
+                
+                <div class="payment-method">
+                    <div class="payment-icon">
+                        <i class="bi bi-send-check"></i>
+                    </div>
+                    <h5>Western Union</h5>
+                    <p>Global money transfer service</p>
+                </div>
+            </div>
+            
+            <div class="mt-5">
+                <div class="alert alert-info">
+                    <h5><i class="bi bi-info-circle"></i> Payment Information</h5>
+                    <p>All payments are processed securely through our encrypted payment gateway. For cryptocurrency payments, please note that we require blockchain confirmation before processing orders. Bank transfers typically take 1-3 business days to process.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shipping Information Section -->
+    <section class="section-padding" style="background: var(--bg-light);">
+        <div class="container">
+            <h2 class="section-title">Shipping Information</h2>
+            <p class="section-subtitle">Detailed shipping options and delivery estimates</p>
+            
+            <div class="shipping-table">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Destination</th>
+                            <th>Service Type</th>
+                            <th>Delivery Time</th>
+                            <th>Tracking</th>
+                            <th>Temperature Control</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>North America</td>
+                            <td>Express Courier</td>
+                            <td>2-5 days</td>
+                            <td>Available</td>
+                            <td>Required for peptides</td>
+                        </tr>
+                        <tr>
+                            <td>Europe</td>
+                            <td>Express Courier</td>
+                            <td>2-4 days</td>
+                            <td>Available</td>
+                            <td>Required for peptides</td>
+                        </tr>
+                        <tr>
+                            <td>Asia-Pacific</td>
+                            <td>Express Courier</td>
+                            <td>2-5 days</td>
+                            <td>Available</td>
+                            <td>Required for peptides</td>
+                        </tr>
+                        <tr>
+                            <td>Rest of World</td>
+                            <td>Express Courier</td>
+                            <td>5-10 days</td>
+                            <td>Available</td>
+                            <td>Required for peptides</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="mt-4">
+                    <h5>Special Handling Requirements</h5>
+                    <p>All peptide shipments are handled with special attention to maintain product integrity:</p>
+                    <ul>
+                        <li>Temperature-controlled packaging with gel ice packs</li>
+                        <li>Protective containers with desiccants</li>
+                        <li>Secure tamper-evident seals</li>
+                        <li>Real-time tracking and delivery notifications</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tracking Section -->
+    <section class="section-padding">
+        <div class="container">
+            <h2 class="section-title">Track Your Shipment</h2>
+            <p class="section-subtitle">Monitor your order status in real-time</p>
+            
+            <div class="tracking-status">
+                <div class="row">
+                    <div class="col-md-8 mx-auto">
+                <form action="https://www.17track.net/en" method="get" target="_blank">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" name="nums" placeholder="Enter tracking number" required>
+                        <button class="btn btn-primary" type="submit">Track Package</button>
+                    </div>
+                </form>
+                
+                <div class="progress mb-4">
+                    <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">Shipped</div>
+                </div>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <i class="bi bi-check-circle-fill text-success"></i> Order Confirmed
+                        <span class="float-end">Jan 20, 2024</span>
+                    </div>
+                    <div class="timeline-item">
+                        <i class="bi bi-check-circle-fill text-success"></i> Payment Received
+                        <span class="float-end">Jan 21, 2024</span>
+                    </div>
+                    <div class="timeline-item">
+                        <i class="bi bi-check-circle-fill text-success"></i> Shipped from Hong Kong
+                        <span class="float-end">Jan 22, 2024</span>
+                    </div>
+                    <div class="timeline-item">
+                        <i class="bi bi-truck text-primary"></i> In Transit
+                        <span class="float-end">Jan 23, 2024</span>
+                    </div>
+                    <div class="timeline-item">
+                        <i class="bi bi-hourglass-top text-muted"></i> Awaiting Delivery
+                        <span class="float-end">Expected Jan 24, 2024</span>
+                    </div>
+                </div>
+            </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h4>PBC Peptide</h4>
+                    <p>Your trusted partner for high-purity peptide raw materials. GMP certified with 20+ years of manufacturing excellence.</p>
+                    <div class="mt-3">
+                        <strong><i class="bi bi-whatsapp"></i> WhatsApp:</strong> <a href="https://wa.me/85270389513" style="color: #b3e5fc;">+852 7038 9513</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" style="color: #b3e5fc; text-decoration: none;">Home</a></li>
+                        <li><a href="products.html" style="color: #b3e5fc; text-decoration: none;">Products</a></li>
+                        <li><a href="quality.html" style="color: #b3e5fc; text-decoration: none;">Quality</a></li>
+                        <li><a href="research.html" style="color: #b3e5fc; text-decoration: none;">Research</a></li>
+                        <li><a href="logistics.html" style="color: #b3e5fc; text-decoration: none;">Logistics</a></li>
+                        <li><a href="contact.html" style="color: #b3e5fc; text-decoration: none;">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h5>Trust & Quality</h5>
+                    <div class="d-flex gap-2 flex-wrap">
+                        <span class="badge bg-success">GMP Certified</span>
+                        <span class="badge bg-info">≥99% Purity</span>
+                        <span class="badge bg-warning">20+ Years</span>
+                    </div>
+                    <p class="mt-3 small">
+                        <strong>Important Notice:</strong> All products are for research use only. Not for human or veterinary use.
+                    </p>
+                </div>
+            </div>
+            <hr style="border-color: rgba(255,255,255,0.1);">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2024 PBC Peptide. All rights reserved. | Quality Assured, Research Trusted</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <style>
+        .timeline-item {
+            padding: 0.5rem 0;
+            position: relative;
+            padding-left: 2rem;
+        }
+        
+        .timeline-item i {
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+        }
+    </style>
+</body>
+</html>

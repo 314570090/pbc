@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Precision Peptides for Breakthrough Research | PBC Peptide</title>
+    <meta name="description" content="GMP-certified, ≥99% Purity, Global Shipping. Your Reliable Peptide Partner for research peptides and custom synthesis.">
+    <meta name="keywords" content="peptide raw materials, GMP peptide, 99% purity peptide, peptide manufacturer, research peptides, custom peptide synthesis">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="src/favicon.ico">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --primary-color: #2c5aa0;
+            --secondary-color: #1a3d6e;
+            --accent-color: #4a90e2;
+            --success-color: #27ae60;
+            --text-dark: #2c3e50;
+            --text-light: #7f8c8d;
+            --bg-light: #f8f9fa;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Header Styles */
+        .navbar {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 1rem 0;
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color) !important;
+        }
+
+        .nav-link {
+            color: var(--text-dark) !important;
+            font-weight: 500;
+            margin: 0 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color) !important;
+        }
+
+        .btn-whatsapp {
+            background: #25d366;
+            color: white !important;
+            border-radius: 25px;
+            padding: 0.5rem 1.5rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-whatsapp:hover {
+            background: #128c7e;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 6rem 0;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            animation: fadeInUp 0.8s ease 0.2s backwards;
+        }
+
+        .btn-primary {
+            background: var(--accent-color);
+            border: none;
+            padding: 0.8rem 2rem;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background: #357abd;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Core Benefits Section */
+        .benefits-section {
+            padding: 5rem 0;
+            background: white;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-light);
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+        }
+
+        .benefit-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .benefit-icon {
+            font-size: 3rem;
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .benefit-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        /* Featured Products Section */
+        .products-section {
+            padding: 5rem 0;
+            background: var(--bg-light);
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+            height: 100%;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .product-img {
+            height: 200px;
+            background: #e9ecef;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6c757d;
+        }
+
+        .product-body {
+            padding: 1.5rem;
+        }
+
+        .product-name {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .product-purity {
+            background: var(--success-color);
+            color: white;
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .btn-outline-primary {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-outline-primary:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            padding: 4rem 0;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            color: white;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: bold;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--secondary-color);
+            color: white;
+            padding: 3rem 0 1.5rem;
+            margin-top: 5rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .navbar-nav {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="src/logo6.png" alt="PBC Peptide Logo" style="height: 60px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="quality.html">Quality</a></li>
+                    <li class="nav-item"><a class="nav-link" href="research.html">Research</a></li>
+                    <li class="nav-item"><a class="nav-link" href="logistics.html">Logistics</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+                <a href="https://wa.me/85270389513?text=Hi%20PBC%20Peptide,%20I%20would%20like%20to%20request%20a%20quote." class="btn btn-whatsapp ms-3">
+                    <i class="bi bi-whatsapp"></i> Get Quote
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section" style="margin-top: 76px; background: url('src/hero-bg.jpg') no-repeat center center; background-size: cover; position: relative;">
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(44, 90, 160, 0.5);"></div>
+        <div class="container" style="position: relative; z-index: 1; padding: 6rem 0;">
+            <h1 class="hero-title">Precision Peptides for Breakthrough Research</h1>
+            <p class="hero-subtitle">GMP-certified, ≥99% Purity, Global Shipping. Your Reliable Peptide Partner.</p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="products.html" class="btn btn-light btn-lg">Explore Products</a>
+                <a href="https://wa.me/85270389513?text=Hi%20PBC%20Peptide,%20I%20have%20an%20inquiry." class="btn btn-whatsapp btn-lg">
+                    <i class="bi bi-whatsapp"></i>Contact via WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Benefits Section -->
+    <section class="benefits-section">
+        <div class="container">
+            <h2 class="section-title">Core Advantages</h2>
+            <p class="section-subtitle">Why researchers and companies trust us with their peptide needs</p>
+            
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="benefit-card animate-fade-in">
+                        <div class="benefit-icon">
+                            <i class="bi bi-building"></i>
+                        </div>
+                        <h3 class="benefit-title">Factory Direct & Scale</h3>
+                        <p>Direct from manufacturing facility ensures competitive pricing and reliable supply. Our scalable production meets both R&D and commercial demands.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="benefit-card animate-fade-in" style="animation-delay: 0.1s;">
+                        <div class="benefit-icon">
+                            <i class="bi bi-clipboard-check"></i>
+                        </div>
+                        <h3 class="benefit-title">Verified Purity ≥99%</h3>
+                        <p>Every batch undergoes rigorous HPLC and MS analysis. Detailed Certificate of Analysis (COA) confirms ≥99% purity for every shipment.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="benefit-card animate-fade-in" style="animation-delay: 0.2s;">
+                        <div class="benefit-icon">
+                            <i class="bi bi-truck"></i>
+                        </div>
+                        <h3 class="benefit-title">Fast & Reliable Logistics</h3>
+                        <p>Global shipping network with temperature-controlled handling ensures your peptides arrive safely and on time. Real-time tracking available.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="video-section" style="padding: 5rem 0; background: var(--bg-light);">
+        <div class="container">
+            <h2 class="section-title">Our Manufacturing Process</h2>
+            <p class="section-subtitle">State-of-the-art facilities ensuring premium quality peptides</p>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="ratio ratio-16x9">
+                        <video controls style="border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                            <source src="src/pbcpeptide.mp4" type="video/mp4">
+                            Your browser does not support video playback.
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section class="products-section">
+        <div class="container">
+            <h2 class="section-title">Featured Products</h2>
+            <p class="section-subtitle">Popular peptide compounds with verified quality</p>
+            
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="product-card animate-fade-in">
+                        <div class="product-img">
+                            <img src="src/tirz.webp" alt="Tirzepatide" style="max-height: 200px; width: auto; object-fit: contain;">
+                        </div>
+                        <div class="product-body">
+                            <h3 class="product-name">Tirzepatide</h3>
+                            <span class="product-purity">≥99% Purity</span>
+                            <p>Novel dual GIP/GLP-1 receptor agonist for diabetes and obesity research.</p>
+                            <a href="products.html#tirzepatide" class="btn btn-outline-primary w-100">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="product-card animate-fade-in" style="animation-delay: 0.1s;">
+                        <div class="product-img" style="background: #f8f9fa; display: flex; align-items: center; justify-content: center; height: 200px; overflow: hidden; border-bottom: 1px solid #eee;">
+                            <img src="src/reta.webp" alt="Retatrutide" style="max-height: 180px; max-width: 100%; width: auto; object-fit: contain; border-radius: 5px; transition: transform 0.3s ease;">
+                        </div>
+                        <div class="product-body">
+                            <h3 class="product-name">Retatrutide</h3>
+                            <span class="product-purity">≥99.2% Purity</span>
+                            <p>Triple GLP-1/GIP/Glucagon receptor agonist for metabolic disease studies.</p>
+                            <a href="products.html#retatrutide" class="btn btn-outline-primary w-100">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="product-card animate-fade-in" style="animation-delay: 0.2s;">
+                        <div class="product-img" style="background: #f8f9fa; display: flex; align-items: center; justify-content: center; height: 200px; overflow: hidden; border-bottom: 1px solid #eee;">
+                            <img src="src/semaglutide.webp" alt="Semaglutide" style="max-height: 180px; max-width: 100%; width: auto; object-fit: contain; border-radius: 5px; transition: transform 0.3s ease;">
+                        </div>
+                        <div class="product-body">
+                            <h3 class="product-name">Semaglutide</h3>
+                            <span class="product-purity">≥99.8% Purity</span>
+                            <p>Highly selective GLP-1 receptor agonist for diabetes and weight management research.</p>
+                            <a href="products.html#semaglutide" class="btn btn-outline-primary w-100">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="product-card animate-fade-in" style="animation-delay: 0.3s;">
+                        <div class="product-img" style="background: #f8f9fa; display: flex; align-items: center; justify-content: center; height: 200px; overflow: hidden; border-bottom: 1px solid #eee;">
+                            <img src="src/cjc-1295.webp" alt="CJC-1295" style="max-height: 180px; max-width: 100%; width: auto; object-fit: contain; border-radius: 5px; transition: transform 0.3s ease;">
+                        </div>
+                        <div class="product-body">
+                            <h3 class="product-name">CJC-1295</h3>
+                            <span class="product-purity">≥99% Purity</span>
+                            <p>Growth hormone releasing factor for muscle growth and recovery studies.</p>
+                            <a href="products.html#cjc1295" class="btn btn-outline-primary w-100">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="product-card animate-fade-in" style="animation-delay: 0.4s;">
+                        <div class="product-img" style="background: #f8f9fa; display: flex; align-items: center; justify-content: center; height: 200px; overflow: hidden; border-bottom: 1px solid #eee;">
+                            <img src="src/ipamorelin.webp" alt="Ipamorelin" style="max-height: 180px; max-width: 100%; width: auto; object-fit: contain; border-radius: 5px; transition: transform 0.3s ease;">
+                        </div>
+                        <div class="product-body">
+                            <h3 class="product-name">Ipamorelin</h3>
+                            <span class="product-purity">≥99.1% Purity</span>
+                            <p>Selective ghrelin receptor agonist for GH secretagogue research.</p>
+                            <a href="products.html#ipamorelin" class="btn btn-outline-primary w-100">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="product-card animate-fade-in" style="animation-delay: 0.5s;">
+                        <div class="product-img" style="background: #f8f9fa; display: flex; align-items: center; justify-content: center; height: 200px; overflow: hidden; border-bottom: 1px solid #eee;">
+                            <img src="src/bpc-157.webp" alt="BPC-157" style="max-height: 180px; max-width: 100%; width: auto; object-fit: contain; border-radius: 5px; transition: transform 0.3s ease;">
+                        </div>
+                        <div class="product-body">
+                            <h3 class="product-name">BPC-157</h3>
+                            <span class="product-purity">≥99.5% Purity</span>
+                            <p>Pentadecapeptide for tissue repair and regeneration studies.</p>
+                            <a href="products.html#bpc157" class="btn btn-outline-primary w-100">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-3 col-6">
+                    <span class="stat-value">20+</span>
+                    <span class="stat-label">Years of Experience</span>
+                </div>
+                <div class="col-md-3 col-6">
+                    <span class="stat-value">30K+</span>
+                    <span class="stat-label">Annual Production</span>
+                </div>
+                <div class="col-md-3 col-6">
+                    <span class="stat-value">35+</span>
+                    <span class="stat-label">Countries Served</span>
+                </div>
+                <div class="col-md-3 col-6">
+                    <span class="stat-value">99.8%</span>
+                    <span class="stat-label">Avg. Purity</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h4>PBC Peptide</h4>
+                    <p>Your trusted partner for high-purity peptide raw materials. GMP certified with 20+ years of manufacturing excellence.</p>
+                    <div class="mt-3">
+                        <strong><i class="bi bi-whatsapp"></i> WhatsApp:</strong> <a href="https://wa.me/85270389513" style="color: #b3e5fc;">+852 7038 9513</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" style="color: #b3e5fc; text-decoration: none;">Home</a></li>
+                        <li><a href="products.html" style="color: #b3e5fc; text-decoration: none;">Products</a></li>
+                        <li><a href="quality.html" style="color: #b3e5fc; text-decoration: none;">Quality</a></li>
+                        <li><a href="research.html" style="color: #b3e5fc; text-decoration: none;">Research</a></li>
+                        <li><a href="logistics.html" style="color: #b3e5fc; text-decoration: none;">Logistics</a></li>
+                        <li><a href="contact.html" style="color: #b3e5fc; text-decoration: none;">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h5>Trust & Quality</h5>
+                    <div class="d-flex gap-2 flex-wrap">
+                        <span class="badge bg-success">GMP Certified</span>
+                        <span class="badge bg-info">≥99% Purity</span>
+                        <span class="badge bg-warning">20+ Years</span>
+                    </div>
+                    <p class="mt-3 small">
+                        <strong>Important Notice:</strong> All products are for research use only. Not for human or veterinary use.
+                    </p>
+                </div>
+            </div>
+            <hr style="border-color: rgba(255,255,255,0.1);">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2024 PBC Peptide. All rights reserved. | Quality Assured, Research Trusted</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Animation script -->
+    <script>
+        // Smooth scroll animation for elements
+        document.addEventListener('DOMContentLoaded', function() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-fade-in');
+                    }
+                });
+            }, observerOptions);
+            
+            // Observe benefit cards and product cards
+            document.querySelectorAll('.benefit-card, .product-card').forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
